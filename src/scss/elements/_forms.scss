@@ -1,0 +1,301 @@
+/*==============================================================================
+  Form Styles
+==============================================================================*/
+
+form {
+    margin: $margins 0;
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form-group,
+fieldset {
+    margin-bottom: $margins;
+}
+
+.form-group {
+    &.radio-inline {
+        display: inline-block;
+        margin-right: $padding;
+    }
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.2rem;
+}
+
+label,
+legend {
+    font-weight: bold;
+}
+
+fieldset {
+    border: $borders;
+    border-radius: $border-radius;
+    box-shadow: none;
+    padding: $padding;
+
+    legend {
+        padding: 0 0.5rem;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+input:not([type]),
+textarea,
+select {
+    appearance: none;
+    background-color: $form-input-bg;
+    background-clip: padding-box;
+    border: $borders;
+    border-radius: $border-radius;
+    box-shadow: none;
+    color: $font-color;
+    display: block;
+    height: 3.375rem;
+    line-height: normal;
+    padding: $padding;
+    width: 100%;
+
+    &::placeholder {
+        color: $form-input-placeholder-color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: $form-input-disabled-bg;
+        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    }
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input:not([type]):focus,
+textarea:focus,
+select:focus {
+    border-color: $form-input-focus;
+    outline: 0;
+}
+
+select {
+    $urlString: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22#{$form-select-arrow}%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-image: str-replace($urlString, "#", "%23");
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    padding: 0 3rem 0 1rem;
+
+    &::-ms-expand {
+        background-color: transparent;
+        display: none;
+    }
+
+    &:focus::-ms-value {
+        // Suppress the nested default white text on blue background highlight given to
+        // the selected option text when the (still closed) <select> receives focus
+        // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+        // match the appearance of the native widget.
+        // See https://github.com/twbs/bootstrap/issues/19398.
+        color: $font-color;
+        background-color: $form-input-bg;
+    }
+
+    &[size],
+    &[multiple] {
+        height: auto;
+    }
+}
+
+textarea {
+    min-height: 10rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    
+    + span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        cursor: pointer;
+        
+        &:before {
+            content: '';
+            display: flex;
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            background: $form-check-inner;
+            border: 0.125rem solid $form-check-border;
+            top: 0;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            transition: 0.25s ease;
+        }
+    }
+
+    &:checked {
+        + span:after {
+            background: $form-check-checked;
+            // The background is removed in Windows high-contrast mode, so we need to set it explicitly here.
+            // 'WindowText' is a system color that should work with whatever high contrast mode the user has set.
+            @media screen and (-ms-high-contrast: active) {
+                & {
+                    background: WindowText;
+                }
+            }
+        }
+    }
+
+    &:disabled,
+    &[readonly] {
+        + span {
+            cursor: default;
+            pointer-events: none;
+            
+            &:before {
+                background: $form-input-disabled-bg;
+                border: 0.125rem solid $form-input-disabled-border;
+                opacity: 1;
+            }
+        }
+
+        &:checked {
+            + span:after {
+                background: $form-input-disabled-border;
+            }
+        }
+    }
+}
+
+input[type="checkbox"] + span,
+input[type="checkbox"]:checked + span {
+    padding: 0;
+    &:before,
+    &:after {
+        border-radius: 0;
+    }
+    &:after {
+        left: 0.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+input[type="radio"] + span,
+input[type="radio"]:checked + span {
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+    border-radius: 100em;
+    &:hover {
+        background-color: $form-check-bg-hover;
+    }
+    &:before,
+    &:after {
+        border-radius: 50%;
+    }
+    &:after {
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+input[type="radio"] {
+    &:checked + span {
+        background-color: $form-check-bg;
+    }
+}
+
+.has-danger input,
+.has-danger select,
+.has-danger textarea {
+    border: $borders-danger;
+}
+
+.form-group {
+    & > .text-help {
+        color: $form-text-help;
+        font-size: 80%;
+        margin-top: 0.2rem;
+    }
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    
+    @include breakpoint-min($bp-mobile) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        
+        & > .form-group {
+            flex-grow: 1;
+            margin-right: $padding;
+        }
+    }
+}
+
+@include breakpoint-min($bp-desktop) {
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
+    input[type="color"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input:not([type]),
+    textarea,
+    select {
+        height: 3.625rem;
+    }
+}

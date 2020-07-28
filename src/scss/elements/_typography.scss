@@ -1,0 +1,251 @@
+/*==============================================================================
+  Typography Styles
+==============================================================================*/
+
+// Abbreviation - add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+abbr[title],
+abbr[data-original-title] {
+    text-decoration: underline dotted;
+    cursor: help;
+    border-bottom: 0;
+    text-decoration-skip-ink: none;
+}
+
+// Address
+address {
+    margin-bottom: 1.5rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+// Bold
+b,
+var,
+strong {
+    font-weight: bold;
+}
+
+// Captions
+caption,
+figcaption {
+    font-size: 90%;
+    font-style: italic;
+    text-align: center;
+}
+
+figcaption {
+    margin: $padding 0;
+}
+
+caption {
+    padding: $padding 0;
+}
+
+// Code block
+pre {
+    border-radius: 0.4rem;
+    background-color: $code-background;
+    color: $pre-font;
+    line-height: 1.2;
+    padding: 1rem;
+    tab-size: 2;
+    font-size: 90%;
+    margin: 0 0 $margins 0;
+}
+
+// Inline code
+:not(pre) > code,
+:not(pre) > samp {
+    background: transparent;
+    color: $code-font;
+    font-size: 90%;
+    padding: 0 0.2rem;
+}
+
+// Keyboard input
+kbd {
+    background-color: $kbd-background;
+    border: 1px solid $kbd-border;
+    border-radius: 0.3rem;
+    box-shadow: $kbd-box-shadow;
+    color: $kbd-font;
+    display: inline-block;
+    font-size: 80%;
+    line-height: 1.4;
+    margin: 0 0.1rem;
+    padding: 0.1rem 0.6rem;
+    text-shadow: $kbd-text-shadow;
+}
+
+// Definition - styling not present in Safari and Chrome.
+dfn {
+    font-style: italic;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-font-color;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin: $margins 0;
+    
+    &:not(:first-child) {
+        margin: 1.5rem 0;
+    }
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child) {
+    margin-top: 2rem;
+}
+
+// Display mobile
+h1 {
+    &.display-1,
+    &.display-2,
+    &.display-3,
+    &.display-4 {
+        font-weight: normal;
+    }
+    
+    &.display-1 {
+        font-size: $display-1-mobile;
+    }
+
+    &.display-2 {
+        font-size: $display-2-mobile;
+    }
+
+    &.display-3 {
+        font-size: $display-3-mobile;
+    }
+
+    &.display-4 {
+        font-size: $display-4-mobile;
+    }
+}
+
+// Headings mobile
+h1 {
+    font-size: $h1-mobile;
+}
+
+h2 {
+    font-size: $h2-mobile;
+}
+
+h3 {
+    font-size: $h3-mobile;
+}
+
+h4 {
+    font-size: $h4-mobile;
+}
+
+h5 {
+    font-size: $h5-mobile;
+}
+
+h6 {
+    font-size: $h6-mobile;
+}
+
+@include breakpoint-min($bp-desktop) {
+    body {
+        font-size: $base-font-size * 1.375;
+    }
+    
+    h1:not(:first-child),
+    h2:not(:first-child),
+    h3:not(:first-child) {
+        margin-top: 2.5rem;
+    }
+
+    // Display desktop
+    h1 {
+        &.display-1 {
+        font-size: $display-1;
+        }
+
+        &.display-2 {
+            font-size: $display-2;
+        }
+
+        &.display-3 {
+            font-size: $display-3;
+        }
+
+        &.display-4 {
+            font-size: $display-4;
+        }
+    }
+
+    // Headings desktop
+    h1 {
+        font-size: $h1;
+    }
+  
+    h2 {
+        font-size: $h2;
+    }
+  
+    h3 {
+        font-size: $h3;
+    }
+  
+    h4 {
+        font-size: $h4;
+    }
+  
+    h5 {
+        font-size: $h5;
+    }
+
+    h6 {
+        font-size: $h6;
+    }
+}
+
+// Italics
+em,
+cite,
+i {
+    font-style: italic;
+    // Prevent 'em' and 'i' affecting 'line-height' in all browsers
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+// Small - add the correct font size in all browsers
+small {
+    font-size: 80%;
+}
+
+// Sub & Sup - prevent 'sub' and 'sup' affecting 'line-height' in all browsers
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+// Muted text
+.text-muted {
+    color: $text-muted;
+}

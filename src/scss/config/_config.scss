@@ -1,0 +1,398 @@
+//==============================================================================
+// Primed Configuration
+//==============================================================================
+
+//==============================================================================
+// Colors
+//==============================================================================
+
+$white: #ffffff !default;
+$black: #111111 !default;
+
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$aqua: #7fdbff !default;
+$blue: #0074d9 !default;
+$navy: #001f3f !default;
+$teal: #39cccc !default;
+$green: #2ecc40 !default;
+$olive: #3d9970 !default;
+$lime:  #01ff70 !default;
+$yellow: #ffdc00 !default;
+$orange: #ff851b !default;
+$red: #d62828 !default;
+$fuchsia: #f012be !default;
+$purple: #b10dc9 !default;
+$maroon: #85144b !default;
+
+// Color Scheme - Set your color scheme here
+// Choose from - 'light', 'dark'
+$color-scheme: light !default;
+
+$background-color: null;
+$font-color: null;
+$heading-font-color: null;
+$blockquote-background: null;
+$blockquote-border: null;
+$button-default: null;
+$button-default-font: null;
+$button-default-hover: null;
+$button-secondary: null;
+$button-secondary-font: null;
+$button-secondary-hover: null;
+$pre-font: null;
+$code-font: null;
+$code-background: null;
+$form-input-bg: null;
+$form-input-placeholder-color: null;
+$form-input-disabled-bg: null;
+$form-input-disabled-border: null;
+$form-check-border: null;
+$form-check-inner: null;
+$form-check-checked: null;
+$form-check-bg: null;
+$form-check-bg-hover: null;
+$form-select-arrow: null;
+$form-input-focus: null;
+$form-text-help: null;
+$hr-gradient: null;
+$kbd-background: null;
+$kbd-border: null;
+$kbd-font: null;
+$kbd-text-shadow: null;
+$kbd-box-shadow: null;
+$kbd-text-shadow: null;
+$link-color: null;
+$link-hover-color: null;
+$mark-background: null;
+$table-border: null;
+$table-background-hover: null;
+$table-header-font: null;
+$table-header-background: null;
+$table-striped-color-odd: null;
+$table-striped-color-even: null;
+$text-muted: null;
+
+@if $color-scheme == light {
+
+    $background-color: $white !default;
+    $font-color: $gray-800 !default;
+    $heading-font-color: $gray-800 !default;
+
+    $blockquote-background: $gray-100 !default;
+    $blockquote-border: $gray-500 !default;
+
+    $button-default: $red !default;
+    $button-default-font: $white !default;
+    $button-default-hover: darken($button-default, 10%) !default;
+    $button-secondary: $gray-900 !default;
+    $button-secondary-font: $white !default;
+    $button-secondary-hover: darken($button-secondary, 10%) !default;
+
+    $pre-font: $white !default;
+    $code-font: $red !default;
+    $code-background: $gray-900 !default;
+
+    $form-input-bg: $white !default;
+    $form-input-placeholder-color: $gray-600 !default;
+    $form-input-disabled-bg: $gray-200 !default;
+    $form-input-disabled-border: $gray-400 !default;
+    $form-check-border: $red !default;
+    $form-check-inner: $white !default;
+    $form-check-checked: $red !default;
+    $form-check-bg: $gray-200 !default;
+    $form-check-bg-hover: $gray-200 !default;
+    $form-select-arrow: $gray-600 !default;
+    $form-input-focus: $blue !default;
+    $form-text-help: $red !default;
+
+    $hr-gradient: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)) !default;
+
+    $kbd-background: $gray-300 !default;
+    $kbd-border: $gray-600 !default;
+    $kbd-font: $gray-800 !default;
+    $kbd-text-shadow: $white !default;
+    $kbd-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset !default;
+    $kbd-text-shadow: 0 1px 0 $white !default;
+
+    $link-color: $blue !default;
+    $link-hover-color: darken($link-color, 10%) !default;
+
+    $mark-background: $yellow !default;
+
+    $table-border: $gray-400 !default;
+    $table-background-hover: $gray-400 !default;
+    $table-header-font: $white !default;
+    $table-header-background: $gray-900 !default;
+    $table-striped-color-odd: $white !default;
+    $table-striped-color-even: $gray-200 !default;
+
+    $text-muted: lighten($font-color, 10%) !default;
+}
+@else if $color-scheme == dark {
+
+    $background-color: $gray-900 !default;
+    $font-color: $gray-100 !default;
+    $heading-font-color: $gray-100 !default;
+
+    $blockquote-background: $gray-800 !default;
+    $blockquote-border: $black !default;
+
+    $button-default: $red !default;
+    $button-default-font: $gray-100 !default;
+    $button-default-hover: darken($button-default, 10%) !default;
+    $button-secondary: $gray-100 !default;
+    $button-secondary-font: $gray-900 !default;
+    $button-secondary-hover: darken($button-secondary, 10%) !default;
+
+    $pre-font: $gray-100 !default;
+    $code-font: $red !default;
+    $code-background: $gray-800 !default;
+
+    $form-input-bg: $gray-800 !default;
+    $form-input-placeholder-color: $gray-100 !default;
+    $form-input-disabled-bg: $gray-600 !default;
+    $form-input-disabled-border: $gray-700 !default;
+    $form-check-border: $red !default;
+    $form-check-inner: $gray-900 !default;
+    $form-check-checked: $red !default;
+    $form-check-bg: $black !default;
+    $form-check-bg-hover: $black !default;
+    $form-select-arrow: $gray-100 !default;
+    $form-input-focus: $blue !default;
+    $form-text-help: $red !default;
+
+    $hr-gradient: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)) !default;
+
+    $kbd-background: $gray-300 !default;
+    $kbd-border: $gray-900 !default;
+    $kbd-font: $gray-800 !default;
+    $kbd-text-shadow: $white !default;
+    $kbd-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset !default;
+    $kbd-text-shadow: 0 1px 0 $white !default;
+
+    $link-color: $red !default;
+    $link-hover-color: darken($link-color, 10%) !default;
+
+    $mark-background: $yellow !default;
+
+    $table-border: $gray-800 !default;
+    $table-background-hover: $gray-800 !default;
+    $table-header-font: $gray-100 !default;
+    $table-header-background: $black !default;
+    $table-striped-color-odd: $gray-700 !default;
+    $table-striped-color-even: $gray-600 !default;
+
+    $text-muted: lighten($font-color, 10%) !default;
+}
+
+//==============================================================================
+// Links
+//==============================================================================
+
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+//==============================================================================
+// Breakpoints
+//==============================================================================
+
+$bp-mobile: 576px !default;
+$bp-tablet: 768px !default;
+$bp-desktop: 992px !default;
+
+//==============================================================================
+// Borders
+//==============================================================================
+
+$border-width: 2px !default;
+$border-style: solid !default;
+$border-color: $gray-600 !default;
+$border-color-danger: $red !default;
+$border-radius: 5px !default;
+$borders: $border-width $border-style $border-color !default;
+$borders-danger: $border-width $border-style $border-color-danger !default;
+$borders-transparent: $border-width $border-style transparent !default;
+
+//==============================================================================
+// Typography
+//==============================================================================
+
+// Font Themes - Set your font theme here
+// Choose from - 'default-fonts', 'authority', 'landing-page', 'elite', 'designer', 'fun', 'custom'
+$font: default-fonts !default;
+
+$custom-font-body: null; // add your custom body font here if '$font' is set to custom
+$custom-font-headings: null; // add your custom headings font here if '$font' is set to custom
+
+// Font Themes
+$font-body: null;
+$font-headings: null;
+$font-monospace: null;
+
+@if $font == default-fonts {
+    
+    // Set body font
+    $font-body: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    // Set headings font
+    $font-headings: Cambria, "Hoefler Text", Utopia, "Liberation Serif", Times, "Times New Roman", serif;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == authority {
+
+    // Import Montserrat
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // Import EB Merriweather
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    // Set body font
+    $font-body: 'Montserrat', sans-serif;
+
+    // Set headings font
+    $font-headings: 'Merriweather', serif;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == landing-page {
+
+    // Import Noto Sans
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    // Import EB Roboto
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    // Set body font
+    $font-body: 'Noto Sans', sans-serif;
+
+    // Set headings font
+    $font-headings: 'Roboto', sans-serif;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == elite {
+
+    // Import Oswald
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+    // Import EB Garamond
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    // Set body font
+    $font-body: 'EB Garamond', serif;
+
+    // Set headings font
+    $font-headings: 'Oswald', sans-serif;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == designer {
+
+    // Import Source Sans Pro
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    // Import Playfair Display
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap');
+
+    // Set body font
+    $font-body: 'Source Sans Pro', sans-serif;
+
+    // Set headings font
+    $font-headings: 'Playfair Display', serif;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == fun {
+
+    // Import Josefin Sans
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    // Import Amatic SC
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+    // Set body font
+    $font-body: 'Josefin Sans', sans-serif;
+
+    // Set headings font
+    $font-headings: 'Amatic SC', cursive;
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+@else if $font == custom {
+
+    // Put your custom font @imports here
+    // @import url('custom-font');
+
+    // Set custom body font
+    $font-body: $custom-font-body;
+
+    // Set custom headings font
+    @if $custom-font-headings != $custom-font-body {
+        $font-headings: $custom-font-headings;
+    }
+
+    // Set monospace font
+    $font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+}
+
+// Body
+$base-font-size: 1rem !default;
+$body-font-size: $base-font-size * 1.125 !default;
+$line-height: 1.6 !default;
+$font-style: normal !default;
+$font-variant: normal !default;
+$font-weight: normal !default;
+
+// Headings
+$heading-font-family: $font-headings !default;
+$heading-line-height: 1.2 !default;
+$heading-font-weight: 700 !default;
+
+$display-1-mobile: 4rem !default;
+$display-2-mobile: 3.5rem !default;
+$display-3-mobile: 3.25rem !default;
+$display-4-mobile: 3rem !default;
+$h1-mobile: 2.5rem !default;
+$h2-mobile: 2rem !default;
+$h3-mobile: 1.75rem !default;
+$h4-mobile: 1.5rem !default;
+$h5-mobile: 1.25rem !default;
+$h6-mobile: $body-font-size !default;
+
+$display-1: 5.75rem !default;
+$display-2: 5rem !default;
+$display-3: 4.375rem !default;
+$display-4: 4rem !default;
+$h1: 3.5rem !default;
+$h2: 2.75rem !default;
+$h3: 2.5rem !default;
+$h4: 2rem !default;
+$h5: 1.75rem !default;
+$h6: 1.375rem !default;
+
+//==============================================================================
+// Spacing
+//==============================================================================
+
+$margins: 1.5rem !default;
+$padding: 1rem !default;

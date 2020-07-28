@@ -1,0 +1,29 @@
+/*==============================================================================
+  Containers
+==============================================================================*/
+
+// Full width container
+.container-max {
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+// Container
+.container {
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Medium container
+.medium-container {
+    @extend .container;
+    max-width: 900px;
+}
+
+// Small container
+.small-container {
+    @extend .container;
+    max-width: 620px;
+}

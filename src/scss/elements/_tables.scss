@@ -1,0 +1,99 @@
+/*==============================================================================
+  Table Styles
+==============================================================================*/
+
+table {
+    border-spacing: 0;
+    margin: $margins auto;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+th {
+    font-weight: bold;
+}
+
+td, th {
+    margin: 0;
+    padding: 0.5rem;
+    text-align: left;
+
+	&:first-child {
+        padding-left: 0;
+    }
+
+	&:last-child {
+        padding-right: 0;
+    }
+}
+
+thead th,
+td {
+    border-bottom: 1px solid $table-border;
+}
+  
+tfoot th {
+    border-top: 1px solid $table-border;
+}
+  
+tbody tr:hover {
+    background-color: $table-background-hover;
+    transition: all 0.3s;
+}
+  
+caption {
+    caption-side: bottom;
+}
+
+.table-striped {
+    td, th {
+        padding: 0.5rem;
+    }
+
+    thead th,
+    tfoot th {
+        background-color: $table-header-background;
+        color: $table-header-font;
+        font-weight: normal;
+    }
+
+    thead th {
+        top: 0;
+        border-bottom: none;
+    }
+
+    tfoot th {
+        border-top: none;
+    }
+      
+    td {
+        border-bottom: none;
+    }
+
+    tbody {
+        tr:nth-child(1n) {
+            background-color: $table-striped-color-odd;
+        }
+      
+        tr:nth-child(2n) {
+            background-color: $table-striped-color-even;
+        }
+
+        tr:hover {
+            background-color: $table-background-hover;
+            transition: all 0.3s;
+        }
+    }
+}
+
+// Container for responsive tables
+.container-table {
+    overflow-x: auto;
+}
+
+@include breakpoint-min($bp-mobile) {
+    .container-table {
+        width: 100%;
+    }
+}

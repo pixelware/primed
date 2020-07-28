@@ -1,0 +1,41 @@
+{
+    "name": "primed",
+    "version": "1.0.0",
+    "description": "A minimal but beautiful landing page CSS UI Framework.",
+    "main": "./dist/index.html",
+    "author": {
+        "name": "Andy Thompson",
+        "url": "https://pixelpersuasion.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pixelware?tab=repositories"
+    },
+    "browserslist": [
+        "> 0.25%",
+        "last 2 versions",
+        "ie 11"
+    ],
+    "devDependencies": {
+        "autoprefixer": "^9.7.5",
+        "browser-sync": "^2.26.7",
+        "cssnano": "^4.1.10",
+        "del": "5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-flatmap": "^1.0.2",
+        "gulp-header": "^2.0.9",
+        "gulp-jshint": "^2.1.0",
+        "gulp-optimize-js": "^1.1.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-svgmin": "^2.2.0",
+        "gulp-terser": "^1.2.0",
+        "jshint": "^2.11.0",
+        "jshint-stylish": "^2.2.1",
+        "lazypipe": "1.0.2",
+        "node-sass": "^4.13.1"
+    }
+}

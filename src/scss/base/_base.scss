@@ -1,0 +1,129 @@
+/*==============================================================================
+  Base Styles
+==============================================================================*/
+
+// HTML base
+html {
+    font-family: sans-serif;
+    font-size: $base-font-size;
+    line-height: 1.15;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+    -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS.
+}
+
+// Body base
+body {
+    background-color: $background-color;
+    font-style: $font-style;
+    font-variant: $font-variant;
+    font-weight: $font-weight;
+    font-size: $body-font-size;
+    line-height: $line-height;
+    font-family: $font-body;
+    color: $font-color;
+}
+
+p,
+ol,
+ul,
+dl,
+table {
+    margin: 0 0 $margins 0;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+// Clear margin for line breaks.
+br {
+    margin-bottom: 0;
+}
+
+// Blockquote
+blockquote {
+    background-color: $blockquote-background;
+    border-left: 0.4rem solid $blockquote-border;
+    margin: $margins 0;
+    padding: $padding;
+    
+    cite {
+        display: block;
+        font-size: 90%;
+        margin: $padding;
+        text-align: right;
+    }
+}
+
+// Figure
+figure {
+    margin: 0 auto;
+    text-align: center;
+}
+
+// Highlight
+mark {
+    background: $mark-background;
+    padding: 0.1rem 0.2rem;
+}
+
+// Horizontal line
+hr {
+    background-image: $hr-gradient;
+    border: 0;
+    height: 1px;
+    margin: 2rem 0;
+}
+
+// Links
+a {
+    color: $link-color;
+    font-weight: normal;
+    text-decoration: $link-decoration;
+    background-color: transparent; // Remove the gray background on active links in IE 10.
+  
+    @include hover-active-focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+// Lists
+ol,
+ul {
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin: 0 0 0 0.5rem;
+}
+
+dt {
+    font-style: italic;
+    font-weight: 700;
+}
+
+dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+// Image
+img {
+    height: auto;
+}
+
+// Footer
+footer {
+    padding: 50px 10px;
+}

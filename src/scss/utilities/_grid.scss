@@ -1,0 +1,150 @@
+/*==============================================================================
+  Grid
+==============================================================================*/
+
+$column-padding: 1rem;
+$margin-bottom: 1rem;
+
+%column-padding {
+    padding-left: $column-padding;
+    padding-right: $column-padding;
+}
+
+// A row has a negative margin which is offset by the padding on the columns.
+%row-margin {
+    margin-left: -$column-padding;
+    margin-right: -$column-padding;
+}
+
+// Row
+.row {
+    @extend %row-margin;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+  
+.col-sm,
+.col-md,
+.col-lg {
+    @extend %column-padding;
+    flex-basis: 100%;
+    margin-bottom: $margin-bottom;
+}
+
+/* Mobile breakpoint */
+
+@include breakpoint-min($bp-mobile) {
+    .col-sm {
+        flex: 1;
+        margin-bottom: 0;
+        &.half {
+            flex-grow: 0; // Cannot use flex shorthand due to ie11 flex calc function bug
+            flex-shrink: 0;
+            flex-basis: calc(1 / 2 * 100%);
+            max-width: calc(1 / 2 * 100%); // Required for ie11 flex border-box ignorance
+        }
+        &.one-fourth {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 4 * 100%);
+            max-width: calc(1 / 4 * 100%);
+        }
+        &.three-fourths {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(3 / 4 * 100%);
+            max-width: calc(3 / 4 * 100%);
+        }
+        &.one-third {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 3 * 100%);
+            max-width: calc(1 / 3 * 100%);
+        }
+        &.two-thirds {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(2 / 3 * 100%);
+            max-width: calc(2 / 3 * 100%);
+        }
+    }
+}
+
+/* Tablet breakpoint */
+
+@include breakpoint-min($bp-tablet) {
+    .col-md {
+        flex: 1;
+        margin-bottom: 0;
+        &.half {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 2 * 100%);
+            max-width: calc(1 / 2 * 100%);
+        }
+        &.one-fourth {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 4 * 100%);
+            max-width: calc(1 / 4 * 100%);
+        }
+        &.three-fourths {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(3 / 4 * 100%);
+            max-width: calc(3 / 4 * 100%);
+        }
+        &.one-third {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 3 * 100%);
+            max-width: calc(1 / 3 * 100%);
+        }
+        &.two-thirds {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(2 / 3 * 100%);
+            max-width: calc(2 / 3 * 100%);
+        }
+    }
+}
+
+/* Desktop breakpoint */
+  
+@include breakpoint-min($bp-desktop) {
+    .col-lg {
+        flex: 1;
+        margin-bottom: 0;
+        &.half {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 2 * 100%);
+            max-width: calc(1 / 2 * 100%);
+        }
+        &.one-fourth {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 4 * 100%);
+            max-width: calc(1 / 4 * 100%);
+        }
+        &.three-fourths {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(3 / 4 * 100%);
+            max-width: calc(3 / 4 * 100%);
+        }
+        &.one-third {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(1 / 3 * 100%);
+            max-width: calc(1 / 3 * 100%);
+        }
+        &.two-thirds {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: calc(2 / 3 * 100%);
+            max-width: calc(2 / 3 * 100%);
+        }
+    }
+}
